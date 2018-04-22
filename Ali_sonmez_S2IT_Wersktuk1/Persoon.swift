@@ -12,16 +12,25 @@ class Persoon {
     var naam:String
     var voornaam:String
     var foto:String
+    var straatnummer:String
+    var gemeentepostcode:String
+    var telefoonnummer:String
     
     init() {
         naam = ""
         voornaam = ""
         foto = ""
+        straatnummer = ""
+        gemeentepostcode = ""
+        telefoonnummer = ""
     }
     
-    init(naam: String, voornaam:String, foto:String){
+    init(naam: String, voornaam:String, foto:String, straatnummer:String, gemeentepostcode:String, telefoonnummer:String){
         self.naam = naam
         self.voornaam = voornaam
         self.foto = foto
+        self.straatnummer = straatnummer
+        self.gemeentepostcode = gemeentepostcode
+        self.telefoonnummer = telefoonnummer
     }
 }
