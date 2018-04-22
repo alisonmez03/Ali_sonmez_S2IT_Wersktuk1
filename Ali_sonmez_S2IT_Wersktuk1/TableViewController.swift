@@ -8,20 +8,20 @@
 
 import UIKit
 
-class PersoonViewController: UITableViewController {
+class TableViewController: UITableViewController {
     
     var personen = [Persoon]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let p1 = Persoon(naam: "margot", voornaam: "robbie", foto: "MargotRobbie", straatnummer: "Scheldestraat 118", gemeentepostcode:"1080 Sint-Jans-Molenbeek", telefoonnummer: "0488.870.452")
+        let p1 = Persoon(naam: "margot", voornaam: "robbie", foto: "MargotRobbie", straatnummer: "Scheldestraat 118", gemeentepostcode:"1080 Sint-Jans-Molenbeek", telefoonnummer: "0488.870.452", coordinaat1:50.866192, coordinaat2:4.366802)
         personen.append(p1)
         
-        let p2 = Persoon(naam: "adriana", voornaam: "lima", foto: "AdrianaLima", straatnummer: "Scheldestraat 118", gemeentepostcode:"1080 Sint-Jans-Molenbeek", telefoonnummer: "0488.870.452")
+        let p2 = Persoon(naam: "adriana", voornaam: "lima", foto: "AdrianaLima", straatnummer: "Scheldestraat 118", gemeentepostcode:"1080 Sint-Jans-Molenbeek", telefoonnummer: "0488.870.452", coordinaat1:50.864100, coordinaat2:4.338527)
         personen.append(p2)
         
-        let p3 = Persoon(naam: "amanda", voornaam: "cerny", foto: "AmandaCerny", straatnummer: "Scheldestraat 118", gemeentepostcode:"1080 Sint-Jans-Molenbeek", telefoonnummer: "0488.870.452")
+        let p3 = Persoon(naam: "amanda", voornaam: "cerny", foto: "AmandaCerny", straatnummer: "Scheldestraat 118", gemeentepostcode:"1080 Sint-Jans-Molenbeek", telefoonnummer: "0488.870.452", coordinaat1:50.866166, coordinaat2:4.362802)
         personen.append(p3)
     }
 
@@ -50,7 +50,7 @@ class PersoonViewController: UITableViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "naarDetailleView"{
-            let vc = segue.destination as! ViewController
+            let vc = segue.destination as! DetaillePersoonView
             let indexPath = self.tableView.indexPathForSelectedRow
             
             vc.persoon = personen[(indexPath?.row)!]

@@ -9,30 +9,27 @@
 import UIKit
 
 class ViewController: UIViewController {
-    
-    var persoon = Persoon()
-    
-    @IBOutlet weak var imgView: UIImageView!
-    @IBOutlet weak var naamLbl: UILabel!
-    @IBOutlet weak var voornaamLbl: UILabel!
-    
-    @IBOutlet weak var telLbl: UILabel!
-    @IBOutlet weak var adresLbl: UILabel!
-    @IBOutlet weak var gemeenteLbl: UILabel!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-    self.naamLbl.text = persoon.naam.capitalized
-    self.voornaamLbl.text = persoon.voornaam.capitalized
-    self.telLbl.text = persoon.telefoonnummer
-    self.adresLbl.text = persoon.straatnummer
-    self.gemeenteLbl.text = persoon.gemeentepostcode
-    self.imgView.image = UIImage(named: persoon.foto)
+
+        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
-}
+    
 
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+    }
+    */
+
+}
