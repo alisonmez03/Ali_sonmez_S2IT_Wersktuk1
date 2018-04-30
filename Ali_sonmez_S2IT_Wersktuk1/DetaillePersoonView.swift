@@ -32,13 +32,13 @@ class DetaillePersoonView: UIViewController, CLLocationManagerDelegate, MKMapVie
     self.voornaamLbl.text = persoon.voornaam.capitalized
     self.telLbl.text = persoon.telefoonnummer
     self.adresLbl.text = persoon.straatnummer.capitalized
-    self.gemeenteLbl.text = persoon.gemeentepostcode
+    self.gemeenteLbl.text = persoon.gemeentepostcode.capitalized
     self.imgView.image = UIImage(named: persoon.foto)
-        
         
     let persoonLoc = MKPointAnnotation()
     persoonLoc.coordinate = CLLocationCoordinate2D(latitude: persoon.coordinaat1, longitude: persoon.coordinaat2)
-    //persoonLoc.title = persoon.naam
+    persoonLoc.title = persoon.straatnummer.capitalized
+    persoonLoc.subtitle = persoon.gemeentepostcode.capitalized
         
     self.map.addAnnotation(persoonLoc)
     }
