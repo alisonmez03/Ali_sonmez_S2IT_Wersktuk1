@@ -67,9 +67,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="MargotRobbie" translatesAutoresizingMaskIntoConstraints="NO" id="hF6-3r-aF8">
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="MargotRobbie" translatesAutoresizingMaskIntoConstraints="NO" id="hF6-3r-aF8">
                                 <rect key="frame" x="0.0" y="88" width="375" height="200"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="3CU-8Y-Rrw" appends="YES" id="qWw-0f-Wh3"/>
+                                </connections>
                             </imageView>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="44N-0M-la5">
                                 <rect key="frame" x="-1" y="451" width="376" height="361"/>
@@ -157,11 +161,41 @@
                         <outlet property="naamLbl" destination="MrW-aI-4Hf" id="jEY-CJ-TLO"/>
                         <outlet property="telLbl" destination="oed-cY-4Ag" id="pZ1-q2-vdg"/>
                         <outlet property="voornaamLbl" destination="4l4-CZ-jma" id="d7h-Ka-ubY"/>
+                        <segue destination="KqY-Od-yh4" kind="show" id="n4p-Ow-cYh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="3CU-8Y-Rrw">
+                    <connections>
+                        <segue destination="KqY-Od-yh4" kind="show" id="o8s-N5-Kk6"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="975" y="36"/>
+        </scene>
+        <!--Image View Controller-->
+        <scene sceneID="zcD-LN-h6n">
+            <objects>
+                <viewController id="KqY-Od-yh4" customClass="ImageViewController" customModule="Ali_sonmez_S2IT_Wersktuk1" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XQX-pY-GiF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4nW-X2-hOL">
+                                <rect key="frame" x="0.0" y="290" width="375" height="233"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="mew-Uk-Kdu"/>
+                    </view>
+                    <connections>
+                        <outlet property="myImage" destination="4nW-X2-hOL" id="Obl-U0-GjL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tn3-ZK-Ifj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1704.8" y="34.729064039408868"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="bla-0i-f38">
@@ -185,4 +219,7 @@
     <resources>
         <image name="MargotRobbie" width="1920" height="1200"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="n4p-Ow-cYh"/>
+    </inferredMetricsTieBreakers>
 </document>

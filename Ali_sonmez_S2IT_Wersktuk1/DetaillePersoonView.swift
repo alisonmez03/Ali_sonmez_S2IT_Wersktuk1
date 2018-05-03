@@ -46,5 +46,11 @@ class DetaillePersoonView: UIViewController, CLLocationManagerDelegate, MKMapVie
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination as? ImageViewController{
+            vc.temp = self.imgView.image
+        }
+    }
 }
 
