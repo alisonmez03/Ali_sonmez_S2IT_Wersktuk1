@@ -17,6 +17,7 @@
 		88E7F37F208BFF38008B36BF /* Ali_sonmez_S2IT_Wersktuk1UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E7F37E208BFF38008B36BF /* Ali_sonmez_S2IT_Wersktuk1UITests.swift */; };
 		88E7F38D208C0051008B36BF /* Persoon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E7F38C208C0051008B36BF /* Persoon.swift */; };
 		88E7F38F208C00F0008B36BF /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E7F38E208C00F0008B36BF /* TableViewController.swift */; };
+		88F4C47A20A47D53007BAD05 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F4C47920A47D53007BAD05 /* MapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		88E7F380208BFF38008B36BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		88E7F38C208C0051008B36BF /* Persoon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persoon.swift; sourceTree = "<group>"; };
 		88E7F38E208C00F0008B36BF /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		88F4C47920A47D53007BAD05 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 				88E7F38E208C00F0008B36BF /* TableViewController.swift */,
 				88E7F360208BFF37008B36BF /* DetaillePersoonView.swift */,
 				88311335209B3A59009E1220 /* ImageViewController.swift */,
+				88F4C47920A47D53007BAD05 /* MapViewController.swift */,
 				88E7F362208BFF37008B36BF /* Main.storyboard */,
 				88E7F365208BFF38008B36BF /* Assets.xcassets */,
 				88E7F367208BFF38008B36BF /* LaunchScreen.storyboard */,
@@ -266,6 +269,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				88E7F361208BFF37008B36BF /* DetaillePersoonView.swift in Sources */,
+				88F4C47A20A47D53007BAD05 /* MapViewController.swift in Sources */,
 				88E7F35F208BFF37008B36BF /* AppDelegate.swift in Sources */,
 				88311336209B3A59009E1220 /* ImageViewController.swift in Sources */,
 				88E7F38D208C0051008B36BF /* Persoon.swift in Sources */,

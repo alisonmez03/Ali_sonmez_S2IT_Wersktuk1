@@ -9,12 +9,10 @@
 import UIKit
 
 class ImageViewController: UIViewController {
-    
     var temp:UIImage?
     
     @IBOutlet var myImage: UIImageView!
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         myImage.image = temp
@@ -23,5 +21,4 @@ class ImageViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-
 }

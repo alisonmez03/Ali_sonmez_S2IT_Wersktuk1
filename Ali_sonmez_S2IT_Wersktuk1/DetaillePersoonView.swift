@@ -11,12 +11,13 @@ import MapKit
 import CoreLocation
 
 class DetaillePersoonView: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
+    
     var persoon = Persoon()
     
-    @IBOutlet weak var imgView: UIImageView!
+
+    @IBOutlet var imgView: UIImageView!
     @IBOutlet weak var naamLbl: UILabel!
     @IBOutlet weak var voornaamLbl: UILabel!
-    
     @IBOutlet weak var telLbl: UILabel!
     @IBOutlet weak var adresLbl: UILabel!
     @IBOutlet weak var gemeenteLbl: UILabel!
@@ -53,4 +54,5 @@ class DetaillePersoonView: UIViewController, CLLocationManagerDelegate, MKMapVie
         }
     }
 }
+
 

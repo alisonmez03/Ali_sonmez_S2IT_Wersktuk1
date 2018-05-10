@@ -1,24 +1,28 @@
 //
-//  PersoonViewController.swift
+//  MapViewController.swift
 //  Ali_sonmez_S2IT_Wersktuk1
 //
-//  Created by Ali Sönmez on 22/04/2018.
+//  Created by Ali Sönmez on 10/05/2018.
 //  Copyright © 2018 Ali Sönmez. All rights reserved.
 //
-
 import UIKit
+import MapKit
+import CoreLocation
 
-class TableViewController: UITableViewController {
+class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
     
     var personen = [Persoon]()
-
+    var locationManager = CLLocationManager()
+    
+    @IBOutlet var MapView: MKMapView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let p1 = Persoon(naam: "margot", voornaam: "robbie", foto: "MargotRobbie", straatnummer: "Meirstraat 24", gemeentepostcode:"5000 Schipper", telefoonnummer: "0488.870.452", coordinaat1:51.219448, coordinaat2:4.402464)
         personen.append(p1)
         
-        let p2 = Persoon(naam: "adriana", voornaam: "lima", foto: "AdrianaLima", straatnummer: "Havenmarkt", gemeentepostcode:"1080 Sint-Jans-Molenbeek", telefoonnummer: "0488.870.452", coordinaat1:50.93069, coordinaat2:5.33248)
+        let p2 = Persoon(naam: "adriana", voornaam: "lima", foto: "AdrianaLima", straatnummer: "Havenmarkt 122", gemeentepostcode:"1080 Sint-Jans-Molenbeek", telefoonnummer: "0488.870.452", coordinaat1:50.93069, coordinaat2:5.33248)
         personen.append(p2)
         
         let p3 = Persoon(naam: "amanda", voornaam: "cerny", foto: "AmandaCerny", straatnummer: "Scheldestraat 118", gemeentepostcode:"8000 Diamant", telefoonnummer: "0488.870.452", coordinaat1:50.866188, coordinaat2:4.366802)
@@ -35,37 +39,33 @@ class TableViewController: UITableViewController {
         
         let p7 = Persoon(naam: "irina", voornaam: "taylor", foto: "irina", straatnummer: "Warandestraat 118", gemeentepostcode:"1080 Rotterdam", telefoonnummer: "0488.870.452", coordinaat1:51.92442, coordinaat2:4.477733)
         personen.append(p7)
-    }
 
+        writeAnnotation()
+        
+        locationManager.requestAlwaysAuthorization()
+        locationManager.startUpdatingLocation()
+    }
+    
+    func writeAnnotation(){
+        for persoon in personen {
+            
+            let annotation = MKPointAnnotation()
+            annotation.coordinate = CLLocationCoordinate2D(latitude: persoon.coordinaat1, longitude: persoon.coordinaat2)
+            annotation.title = persoon.straatnummer.capitalized
+            
+            self.MapView.addAnnotation(annotation)
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return personen.count
-    }
-
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath)
-
-        cell.textLabel?.text = personen[indexPath.row].naam.capitalized
-        cell.detailTextLabel?.text = personen[indexPath.row].voornaam.capitalized
-        cell.imageView?.image = UIImage(named: personen[indexPath.row].foto)
-
-        return cell
+    func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
+        let center = CLLocationCoordinate2D(latitude: userLocation.coordinate.latitude, longitude: userLocation.coordinate.longitude)
+        let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
+        
+        mapView.setRegion(region, animated: true)
     }
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "naarDetailleView"{
-            let vc = segue.destination as! DetaillePersoonView
-            let indexPath = self.tableView.indexPathForSelectedRow
-            
-            vc.persoon = personen[(indexPath?.row)!]
-        }
-    }
+    
 }
